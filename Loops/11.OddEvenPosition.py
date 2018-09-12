@@ -3,9 +3,9 @@ numbersCount = int(input())
 oddSum = 0
 evenSum = 0
 oddMin = 1000000000.0
-oddMax = 1000000000.0
+oddMax = -1000000000.0
 evenMin = 1000000000.0
-evenMax = 1000000000.0
+evenMax = -1000000000.0
 if numbersCount == 0:
     print(f"OddSum={oddSum}, OddMin=No, OddMax=No, EvenSum={evenSum}, EvenMin=No, EvenMax=No")
 else:
@@ -38,12 +38,17 @@ else:
     else:
         print("OddMax=No,")
 
-    print(f"EvenSum={evenSum:g},")
-    if oddMin != None:
-        print(f"EvenMin={evenMin:g},")
-    else:
+    if evenSum == 0:
+        print(f"EvenSum={evenSum:g},")
         print("EvenMin=No,")
-    if oddMin != None:
-        print(f"EvenMax={evenMax:g},")
+        print("EvenMax=No")
     else:
-        print("OddMax=No")
+        print(f"EvenSum={evenSum:g},")
+        if oddMin != None:
+            print(f"EvenMin={evenMin:g},")
+        else:
+            print("EvenMin=No,")
+        if oddMin != None:
+            print(f"EvenMax={evenMax:g},")
+        else:
+            print("EvenMax=No")
