@@ -1,5 +1,9 @@
 num = int(input())
 
-print(f"+{"-", }")
+print(f"+{' -' * (num - 2)} +")
 
-#ToDO
+for x in range(num - 2):
+    print(f"|{' -' * (num - 2)} |")
+
+print(f"+{' -' * (num - 2)} +")
+
