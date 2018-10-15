@@ -31,4 +31,11 @@
 	   MОДУЛНО ДЕЛЕНЕ(Делене с остатък)-
 
 - премахване на нулите, ако няма нужда от тях	
-     print(str(area).rstrip('0').rstrip('.'))   
+     print(str(area).rstrip('0').rstrip('.')) 
+
+- eval param
+In simple terms, the eval() method runs the python code (which is passed as an argument) within the program.
+
+The syntax of eval() is:
+
+eval(expression, globals=None, locals=None)	 
