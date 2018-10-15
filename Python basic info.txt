@@ -1,0 +1,34 @@
+- print("Hello World")
+   
+   - print("Hello World\nThis is a message")
+  
+  -   x = 3
+      print(x)
+	 
+	 -  x = 2
+            y = 3
+            print("x = {}, y = {}".format(x,y))
+			
+    -  print("My name is " + name + " and i'm " + str(age) + "years old, from " + town)
+	
+	-print(f"{x} minutes {b} seconds")
+	   print(f"{x:.2f} minutes {b:.3f} seconds")
+	   
+	 -  print("Hello there, %s" % a)
+	 
+	 pizza="pizza""
+	 cola="cola"
+	 a=2
+	 waffles='waffles'
+	 -print("One %s, %s and %d %s" % (pizza,cola,a,waffles)) 
+	 
+	 -print("Hi, i am ", name , "from " , town)
+	 
+	 -a = 5
+      print("a =", a, sep='00000', end='\n\n\n')
+       print("a =", a, sep='0', end='')
+	   
+	   MОДУЛНО ДЕЛЕНЕ(Делене с остатък)-
+
+- премахване на нулите, ако няма нужда от тях	
+     print(str(area).rstrip('0').rstrip('.'))   
