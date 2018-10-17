@@ -1,0 +1,58 @@
+import pandas as pd
+ask=input("Input Your Subject List with spaces:: ").split()
+data={}
+datafrm=[]
+totalmark=0
+totalgpa=0.00
+def GpA(mark):
+dat=("A+",5.00,"Exclent") 
+if mark>=80 else ("A",4.00,"Very Good") 
+if 70<=mark<80 else ("A-",3.50,"Good") 
+if 60<=mark<70 else ("B",3.00,"Fair") 
+if 50<=mark<60 else ("C",2.00,"Not Satisfactori") 
+if 40<=mark<50 else ("D",1.00,"Poor") 
+if 33<=mark<40 else ("F",0.00,"Fail") 
+return dat
+
+def Gp(gpa):
+if gpa==5.00:
+return "A+","Exclent"
+elif 5.00>gpa>=4.00:
+return "A","Very Good"
+elif 4.00>gpa>=3.50:
+return 'A-',"Good"
+elif 3.50>gpa>=3.00:
+return 'B',"Fair"
+elif 3.00>gpa>=2.00:
+return 'C',"Not Satisfactori"
+elif 2.00>gpa>=1.00:
+return 'D',"Poor"
+elif 1.00>gpa:
+return 'F',"Fail"
+
+for i in ask:
+data[i]=int(input(f"Enter Mark of {i}:: "))
+totalmark+=data[i]
+ask.append("Final Result")
+#ask.insert(0,'Subject')
+for sub,marks in data.items():
+datafrm.append([100,marks,GpA(marks)[1],GpA(marks)[0],GpA(marks)[2]])
+
+for i in datafrm:
+totalgpa+=i[2]
+totalgpa=totalgpa/len(datafrm)
+
+datafrm.append([100*len(datafrm),totalmark,totalgpa,Gp(totalgpa)[0],Gp(totalgpa)[1]])
+
+PDataFrm=pd.DataFrame(datafrm,columns=["Full Marks","Reuslt","G.P","G.P.A",'Comments'])
+
+#PDataFrm.rename_axis('name',axis='columns')
+PDataFrm.rename({i:ask[i] for i in range(len(datafrm))},inplace=True)
+print(PDataFrm)
+
+while True:
+ak=input('Do you want to Create a CSV file of this markshit?(Recommanded)[Yes / No]:')
+if ak=="Yes" or ak=='yes':
+ak2=input("Enter path with filename:")
+PDataFrm.to_csv(ak2,encoding='utf-8')
+print("CSV File created..")
