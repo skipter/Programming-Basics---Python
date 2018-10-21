@@ -1,5 +1,4 @@
 number = int(input())
-# TODO correct the logic, there is a mistake with calculations.
 tempNum = number
 bonus = 0
 if number <= 100:
