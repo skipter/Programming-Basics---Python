@@ -14,7 +14,7 @@ while command != "END":
     meters = int(input())
     progress += meters
 
-    if progress > everest:
+    if progress >= everest:
         break
     command = input()
 
